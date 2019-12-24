@@ -1,0 +1,68 @@
+@import "vendor/bulma/utilities/_all.sass"
+@import "vendor/bulma/base/_all.sass"
+@import "vendor/bulma/components/_all.sass"
+@import "vendor/bulma/elements/_all.sass"
+@import "vendor/bulma/grid/_all.sass"
+@import "vendor/bulma/layout/_all.sass"
+
+@import "calendar.sass"
+@import "loader.sass"
+
+html,
+body
+	background-color: #FFFFFF
+	width: 100%
+	height: 100%
+
+#root
+	height: 100%
+
+	#root-inner
+		height: 100%
+
+		.navbar-container
+			border-bottom: 1px solid #f5f5f5
+
+		.content-container
+			height: calc(100% - #{$navbar-height} - 1px)
+
+.planlist-item
+  	margin-bottom: 1.5rem
+  	&:last-child
+	  	margin: 0
+
+.placeholder-tag
+  	width: 50px
+
+.plan-tags-container
+  	flex-direction: column
+  	align-items: flex-end
+
+  	.tags:not(:last-child)
+	  	margin-bottom: 0.5rem
+
+.level, .dropdown, .dropdown-trigger
+	width: 100%
+
+.course-list
+	margin-top: 1rem
+
+	.course-list-item
+		display: flex
+		flex-direction: row
+		padding: 0.75rem 0rem
+		border-bottom: 1px solid $grey-lighter
+
+		&:last-child
+			border: 0
+
+
+		.left
+			width: 25%
+
+			.course-list-item-icon
+				color: $grey-dark
+				margin-right: 0.5rem
+
+		.right
+			width: 75%

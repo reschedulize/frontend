@@ -1,0 +1,63 @@
+.loader-container
+	height: calc(100% - (2 * #{$hr-margin}) - #{$hr-height})
+
+	display: flex
+	align-items: center
+	justify-content: center
+
+	.loader-inner
+		display: flex
+		flex-direction: column
+		align-items: center
+
+		.loader-animation
+			.loader-animation-box
+				width: 50px
+				height: 50px
+				animation: animate .5s linear infinite, colorchange 2s step-end infinite .25s
+				border-radius: 3px
+
+			@keyframes animate
+				17%
+					border-bottom-right-radius: 3px
+				25%
+					transform: translateY(9px) rotate(22.5deg)
+				50%
+					transform: translateY(18px) scale(1,.9) rotate(45deg)
+					border-bottom-right-radius: 40px
+				75%
+					transform: translateY(9px) rotate(67.5deg)
+				100%
+					transform: translateY(0) rotate(90deg)
+
+			@keyframes colorchange
+				0%
+					background: #209cee
+				25%
+					background: #ffdd57
+				50%
+					background: #23d160
+				75%
+					background: #ff3860
+				100%
+					background: #209cee
+
+			.loader-animation-shadow
+				width: 50px
+				height: 5px
+				background: #000
+				opacity: 0.1
+				margin-top: 9px
+				border-radius: 50%
+				animation: shadow .5s linear infinite
+
+			@keyframes shadow
+				50%
+					transform: scale(1.2, 1)
+
+		.loader-title
+			margin-top: 15px
+			font-size: 10pt
+			font-weight: 300
+			letter-spacing: 1px
+			text-transform: uppercase

@@ -1,0 +1,117 @@
+$calendar-cell-height: 30px
+$calendar-times-width: 75px
+
+.calendar-container
+	display: flex
+	flex-direction: column
+
+	width: 100%
+
+	border: 1px solid #dbdbdb
+	border-radius: 4px
+
+	overflow: hidden
+
+	.calendar-header
+		display: flex
+		flex-direction: row
+
+		width: 100%
+		height: 25px
+
+		line-height: 25px
+		text-align: center
+
+		background-color: #f9f9f9
+
+		border-bottom: 1px solid #dbdbdb
+
+		.calendar-dow
+			flex-basis: 100%
+
+			box-sizing: border-box
+			border-left: 1px solid #dbdbdb
+
+			font-size: 10pt
+			font-weight: 500
+
+			&:first-child
+				margin-left: $calendar-times-width
+
+	.calendar-body
+		overflow: hidden
+
+		display: flex
+		flex-direction: row
+
+		.calendar-time-label-container
+			flex: 0 0 $calendar-times-width
+
+			display: flex
+			flex-direction: column
+
+			background-color: #f9f9f9
+
+			padding-top: ($calendar-cell-height / 2) - 1
+			padding-bottom: $calendar-cell-height / 2
+
+			.calendar-time-label
+				width: 100%
+				height: $calendar-cell-height
+
+				background-color: #f9f9f9
+
+				font-size: 10pt
+				line-height: $calendar-cell-height
+				text-align: right
+
+				box-sizing: border-box
+				padding-right: 10px
+
+		.calendar-week
+			display: flex
+			flex-direction: row
+
+			width: 100%
+			min-height: 100%
+
+			background-size: 100px $calendar-cell-height
+			background-image: linear-gradient(#dbdbdb 1px, transparent 1px)
+			background-position: top -1px left 0px
+
+
+			.calendar-day
+				flex-basis: 100%
+
+				position: relative
+
+				width: 100%
+				height: inherit
+
+				box-sizing: border-box
+				border-left: 1px solid #dbdbdb
+
+				&:last-child
+					border-width: 0px 0px 0px 1px
+
+				.calendar-class
+					position: absolute
+
+					left: 0px
+
+					width: 100%
+					height: $calendar-cell-height
+
+					background-color: #e0e0e0
+
+					font-size: 10pt
+					text-align: center
+
+					transform: translateY(-1px)
+
+					@each $name, $pair in $colors
+						$color: nth($pair, 1)
+						$color-invert: nth($pair, 2)
+						&.is-#{$name}
+							background-color: $color
+							color: $color-invert
