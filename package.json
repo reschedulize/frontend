@@ -1,17 +1,17 @@
 {
 	"devDependencies": {
-		"@babel/core": "^7.1.0",
+		"@babel/core": "^7.20.7",
 		"@babel/preset-env": "^7.1.0",
 		"@babel/preset-react": "^7.0.0",
-		"babel-loader": "^8.0.2",
+		"babel-loader": "^8.3.0",
 		"del": "^3.0.0",
 		"gulp": "^4.0.0",
 		"gulp-clean-css": "^3.10.0",
 		"gulp-htmlmin": "^5.0.1",
 		"gulp-sass": "^4.0.1",
 		"vinyl-named": "^1.1.0",
-		"webpack": "^4.19.1",
-		"webpack-stream": "^5.1.1"
+		"webpack": "^5.75.0",
+		"webpack-stream": "^7.0.0"
 	},
 	"dependencies": {
 		"react": "^16.5.1",
